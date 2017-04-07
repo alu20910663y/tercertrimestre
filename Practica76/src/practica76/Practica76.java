@@ -9,7 +9,7 @@ public class Practica76 {
         int exit=1,opcion,num1,num2;
         
         do{
-        System.out.println("CALCULADORA : 1.Suma 2.Resta 3.Multiplicacion 4.Division 5.Salir --");
+        System.out.println("CALCULADORA : 1.Suma 2.Resta 3.Multiplicacion 4.Division 5.Salir");
         opcion=S.nextInt();
         
         if(opcion==5){
