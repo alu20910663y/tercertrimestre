@@ -1,4 +1,4 @@
-package practica84;
+package Extra3T_1;
 
 public class teorema {
    private int catetoa;

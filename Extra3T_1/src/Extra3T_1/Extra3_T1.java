@@ -1,9 +1,9 @@
-package practica84;
+package Extra3T_1;
 
 import java.util.Scanner;
 
 
-public class Practica84 {
+public class Extra3_T1 {
 
    
     public static void main(String[] args) {
