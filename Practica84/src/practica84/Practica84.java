@@ -1,37 +1,21 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package practica84;
 
-import java.util.Scanner;
-
-
+/**
+ *
+ * @author carlos
+ */
 public class Practica84 {
 
-   
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        int eleccion,variable_a,variable_b;
-        Scanner S=new Scanner(System.in);
-        System.out.println("----------Teorema de pitagoras----------");
-        System.out.println("Menu:");
-        System.out.println("1.Introducir catetos");
-        System.out.println("2.Introducir hipotenusa y cateto");
-        
-        eleccion=S.nextInt();
-        
-        switch(eleccion){
-            case 1:
-                System.out.println("Introduce catetos:");
-                variable_a=S.nextInt();
-                variable_b=S.nextInt();
-                teorema catetos=new teorema(variable_a,variable_b,0);
-                System.out.println("Resultado del teorema de pitagoras: "+catetos.Getresultado());
-                break;
-            case 2:
-                System.out.println("Introduce cateto:");
-                variable_a=S.nextInt();
-                System.out.println("Introduce hipotenusa:");
-                variable_b=S.nextInt();
-                teorema hipotenusa=new teorema(variable_a,0,variable_b);
-                System.out.println("Resultado del teorema de pitagoras: "+hipotenusa.Getresultado());
-                break;
-        }  
+        // TODO code application logic here
     }
+    
 }
