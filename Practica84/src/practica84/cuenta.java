@@ -59,9 +59,34 @@ public class cuenta {
     public int Get_num_cuenta(){
         return num_cuenta;
     }
+    public void Set_nombre(String nombre){
+        this.nombre=nombre;
+    }
+    public void Set_apellido(String apellido){
+        this.apellido=apellido;
+    }
+    public void Set_segundo_apellido(String apellido2){
+        this.segundo_apellido=apellido2;
+    }
+    public void Set_dni(String dni){
+        this.dni=dni;
+    }
+    public void Ingreso(double cantidad){
+        this.saldo=this.saldo+cantidad;
+    }
+    public void Reintegro(double cantidad){
+        this.saldo=this.saldo-cantidad;
+    }
     
-    
-    
+    public void try1(){
+        System.out.println(nombre);
+        System.out.println(apellido);
+        System.out.println(segundo_apellido);
+        System.out.println(dni);
+        System.out.println(num_cuenta);
+        System.out.println(interes);
+        System.out.println(saldo);
+    }
     
     
     

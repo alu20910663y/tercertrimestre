@@ -6,9 +6,10 @@ public class Practica84 {
     
     public static void main(String[] args) {
         Scanner S=new Scanner(System.in);
-        int opcion1,opcion2,exit1=0,contador=0,interes,num_cuenta;
+        int opcion1,opcion2,opcion3,opcion4,exit1=0,contador=0,interes,num_cuenta,num_cuenta2;
         String nombre,apellido,apellido2,dni;
-        double salario;
+        String name,ap1,ap2,dni2;
+        double cantidad;
         
         System.out.println("Bienvenido a BancodelParque.");
         cuenta arraycuenta[]=new cuenta[2];
@@ -50,7 +51,7 @@ public class Practica84 {
                        default:
                            System.out.println("ERROR: La opcion que ha marcado no existe.");
                    }
-                   
+                   break;
             case 2:
                 
                 System.out.println("Introduce numero de cuenta: ");
@@ -58,17 +59,108 @@ public class Practica84 {
                 
                 for(int i=0;i<2;i++){
                     if(num_cuenta==arraycuenta[i].Get_num_cuenta()){
-                        
+                        i=2;
+                        System.out.println("Accediendo a la cuenta... ");
+                        System.out.println("1.Cambiar nombre. ");
+                        System.out.println("2.Cambiar primer appellido.");
+                        System.out.println("3.Cambiar segundo apellido.");
+                        System.out.println("4.Cambiar DNI.");
+                        System.out.println("5.Cambiar tipo de interes.");
+                        opcion3=S.nextInt();
+                        switch(opcion3){
+                            case 1:
+                                System.out.println("Introduce nuevo nombre: ");
+                                name=S.next();
+                                arraycuenta[i].Set_nombre(name);
+                                System.out.println("Nombre modificado correctamente.");
+                                break;
+                            case 2:
+                                System.out.println("Introduce nuevo primer apellido: ");
+                                ap1=S.next();
+                                arraycuenta[i].Set_apellido(ap1);
+                                System.out.println("Primer apellido modificado correctamente.");
+                                break;
+                            case 3:
+                                System.out.println("Introduce nuevo segundo apellido: ");
+                                ap2=S.next();
+                                arraycuenta[i].Set_segundo_apellido(ap2);
+                                System.out.println("Segundo apellido modificado correctamente.");
+                                break;
+                            case 4:
+                                System.out.println("Introduce nuevo DNI: ");
+                                dni2=S.next();
+                                arraycuenta[i].Set_dni(dni2);
+                                System.out.println("DNI modificado correctamente.");
+                                break;
+                            default:
+                                System.out.println("No existe la opcion marcada.");
+                        }
                     }
                 }
+                break;
+            case 3:
                 
+                System.out.println("Introduce numero de cuenta: ");
+                num_cuenta=S.nextInt();
+                
+                for(int i=0;i<6;i++){
+                    if(num_cuenta==arraycuenta[i].Get_num_cuenta()){
+                     i=5;   
+                     System.out.println("Accediendo a la cuenta... ");
+                     System.out.println("1.Ingreso.");
+                     System.out.println("2.Reintegro.");
+                     System.out.println("3.Transferencia.");   
+                     
+                     opcion4=S.nextInt();
+                     
+                     switch(opcion4){
+                        case 1:
+                            System.out.println("Introduce cantidad: ");
+                            cantidad=S.nextDouble();
+                            arraycuenta[i].Ingreso(cantidad);
+                            System.out.println("Ingreso completado.");
+                            break;
+                         case 2:
+                            System.out.println("Introduce cantidad: ");
+                            cantidad=S.nextDouble();
+                            arraycuenta[i].Reintegro(cantidad);
+                            System.out.println("Reintegro completado.");
+                            break;
+                         case 3:
+                            System.out.println("Introduce cantidad: ");
+                            cantidad=S.nextDouble();
+                            System.out.println("Introduce cuenta de transaccion: ");
+                            num_cuenta2=S.nextInt();
+                            for(int j=0;j<6;j++){
+                                if(num_cuenta2==arraycuenta[j].Get_num_cuenta()){
+                                    j=6;
+                                    arraycuenta[i].Reintegro(cantidad);
+                                    arraycuenta[j].Ingreso(cantidad);
+                                }
+                            }
+                            System.out.println("Transferencia completado.");
+                            break;
+                        default:    
+                            System.out.println("No existe la opcion marcada."); 
+                     }
+                     
+                     
+                    }
+                }
+                break;
+            case 4:
+                exit1=1;
+                System.out.println("Buenos dias,buenas tardes y buenas noches.");
+            
+            default:
+                System.out.println("No existe la opcion marcada.");
         }
         
         
         
         }while(exit1==0);
         
-        
+        arraycuenta[0].try1();
     }
     
 }
