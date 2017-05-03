@@ -55,7 +55,21 @@ public class cuenta {
         System.out.println("Tipo de interes: "+interes);
         System.out.println("Saldo: "+saldo);
     }
-    
+    public String Get_nombre(){
+        return nombre;
+    }
+    public String Get_apellido(){
+        return apellido;
+    }
+    public String Get_segundo_apellido(){
+        return segundo_apellido;
+    }
+    public String Get_dni(){
+        return dni;
+    }
+    public int Get_interes(){
+        return interes;
+    }
     public int Get_num_cuenta(){
         return num_cuenta;
     }
@@ -78,7 +92,7 @@ public class cuenta {
         this.saldo=this.saldo-cantidad;
     }
     
-    public void try1(){
+    public void Get_datos(){
         System.out.println(nombre);
         System.out.println(apellido);
         System.out.println(segundo_apellido);

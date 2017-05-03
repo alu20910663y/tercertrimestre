@@ -18,7 +18,8 @@ public class Practica84 {
         System.out.println("1.Creacion de cuenta.");
         System.out.println("2.Modificacion de cuenta.");
         System.out.println("3.Transacciones.");
-        System.out.println("4.Salir del programa.");
+        System.out.println("4.Mostrar datos.");
+        System.out.println("5.Salir del programa.");
         opcion1=S.nextInt();
         
         switch(opcion1){
@@ -45,7 +46,16 @@ public class Practica84 {
                         break;
                         
                        case 2:
-                           System.out.println("Funcion pendiente de añadir.");
+                           System.out.println("Introduce numero de cuenta del que vas a copiar: ");
+                           num_cuenta=S.nextInt();
+                
+                           for(int i=0;i<contador;i++){
+                           if(num_cuenta==arraycuenta[i].Get_num_cuenta()){
+                           arraycuenta[contador]=new cuenta(arraycuenta[i].Get_nombre(),arraycuenta[i].Get_apellido(),arraycuenta[i].Get_segundo_apellido(),arraycuenta[i].Get_dni(),arraycuenta[i].Get_interes());
+                           contador++;
+                           System.out.println("Cuenta opiada correctamente.");
+                           }
+                           }
                         break;
                         
                        default:
@@ -57,9 +67,9 @@ public class Practica84 {
                 System.out.println("Introduce numero de cuenta: ");
                 num_cuenta=S.nextInt();
                 
-                for(int i=0;i<2;i++){
+                for(int i=0;i<contador;i++){
                     if(num_cuenta==arraycuenta[i].Get_num_cuenta()){
-                        i=2;
+                        
                         System.out.println("Accediendo a la cuenta... ");
                         System.out.println("1.Cambiar nombre. ");
                         System.out.println("2.Cambiar primer appellido.");
@@ -103,9 +113,9 @@ public class Practica84 {
                 System.out.println("Introduce numero de cuenta: ");
                 num_cuenta=S.nextInt();
                 
-                for(int i=0;i<6;i++){
+                for(int i=0;i<contador;i++){
                     if(num_cuenta==arraycuenta[i].Get_num_cuenta()){
-                     i=5;   
+                       
                      System.out.println("Accediendo a la cuenta... ");
                      System.out.println("1.Ingreso.");
                      System.out.println("2.Reintegro.");
@@ -131,9 +141,9 @@ public class Practica84 {
                             cantidad=S.nextDouble();
                             System.out.println("Introduce cuenta de transaccion: ");
                             num_cuenta2=S.nextInt();
-                            for(int j=0;j<6;j++){
+                            for(int j=0;j<contador;j++){
                                 if(num_cuenta2==arraycuenta[j].Get_num_cuenta()){
-                                    j=6;
+                                    
                                     arraycuenta[i].Reintegro(cantidad);
                                     arraycuenta[j].Ingreso(cantidad);
                                 }
@@ -149,6 +159,16 @@ public class Practica84 {
                 }
                 break;
             case 4:
+                System.out.println("Introduce numero de cuenta: ");
+                num_cuenta=S.nextInt();
+                
+                for(int i=0;i<contador;i++){
+                    if(num_cuenta==arraycuenta[i].Get_num_cuenta()){
+                     arraycuenta[i].Get_datos();
+                    }
+                    }
+                break;
+            case 5:
                 exit1=1;
                 System.out.println("Buenos dias,buenas tardes y buenas noches.");
             
@@ -160,7 +180,7 @@ public class Practica84 {
         
         }while(exit1==0);
         
-        arraycuenta[0].try1();
+        
     }
     
 }
