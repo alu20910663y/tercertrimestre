@@ -8,14 +8,12 @@ public class Practica87 {
 
    
     public static void main(String[] args) {
-        
-        int opcion,exit=0,ejemplares,prestamos;
+        int opcion,exit=0,ejemplares,prestamos,contador=0;
         String titulo,autor,titol;
         
         Scanner S=new Scanner(System.in);
         
-        ArrayList <Libro> libro=new ArrayList <>();
-        Libro aux;
+        Libro arraylibro[]=new Libro[10];
         
         do{
             System.out.println("1.Añadir nuevo libro.");
@@ -35,24 +33,24 @@ public class Practica87 {
                     ejemplares=S.nextInt();
                     System.out.println("Prestamos: ");
                     prestamos=S.nextInt();
-                    aux = new Libro(titulo,autor,ejemplares,prestamos);
-                    libro.add(aux);
+                    arraylibro[contador]=new Libro(titulo,autor,ejemplares,prestamos);
+                    contador++;
                 break;
                 case 2:
                     System.out.println("---Introduce el titulo del libro---");
                     titol=S.next();
                 
-                    for(int i=0;i<libro.size();i++){
-                        if(libro.get(i).GetTitulo().equals(titol)){
+                    for(int i=0;i<contador;i++){
+                        if(arraylibro[i].GetTitulo().equals(titol)){
                             System.out.println("1.Pedir prestado.");
                             System.out.println("2.Devolucion");
                             opcion=S.nextInt();
                             switch(opcion){
                                 case 1:
-                                    libro.get(i).Prestamo();
+                                    arraylibro[i].Prestamo();
                                 break;
                                 case 2:
-                                    libro.get(i).Devolucion();
+                                    arraylibro[i].Devolucion();
                                 break;    
                             }
                         }
@@ -62,12 +60,12 @@ public class Practica87 {
                     System.out.println("---Introduce el titulo del libro---");
                     titol=S.next();
                 
-                    for(int i=0;i<libro.size();i++){
-                        if(libro.get(i).GetTitulo().equals(titol)){
-                            System.out.println("Titulo: "+libro.get(i).GetTitulo());
-                            System.out.println("Autor: "+libro.get(i).GetAutor());
-                            System.out.println("Ejemplares: "+libro.get(i).GetEjemplares());
-                            System.out.println("Prestamos: "+libro.get(i).GetPrestamos());
+                    for(int i=0;i<contador;i++){
+                        if(arraylibro[i].GetTitulo().equals(titol)){
+                            System.out.println("Titulo: "+arraylibro[i].GetTitulo());
+                            System.out.println("Autor: "+arraylibro[i].GetAutor());
+                            System.out.println("Ejemplares: "+arraylibro[i].GetEjemplares());
+                            System.out.println("Prestamos: "+arraylibro[i].GetPrestamos());
                         }
                         }
                 break;    
@@ -75,6 +73,7 @@ public class Practica87 {
                     exit=1;
             }
         }while(exit==0);
+        
         
         
     }
