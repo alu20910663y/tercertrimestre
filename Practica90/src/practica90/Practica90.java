@@ -19,7 +19,7 @@ public class Practica90 {
         
         Dni dni=new Dni(numeros,letra);
         
-        System.out.println(dni.letra_ok());
+        dni.letra_ok();
     }
     
 }
