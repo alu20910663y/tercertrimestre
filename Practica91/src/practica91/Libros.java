@@ -2,6 +2,7 @@
 package practica91;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 
 public class Libros {
@@ -10,14 +11,16 @@ public class Libros {
     private static int contador=0;
     private int id;
     private int ejemplares;
-    private int prestamos;
-    private ArrayList<Integer> librosprestados=new ArrayList<>();
+    private int prestamos=0;
+    private ArrayList<Integer> usuariosprestados=new ArrayList<>();
     
     
     
     public Libros(String nombre,int ejemplares){
         this.nombre=nombre;
         this.ejemplares=ejemplares;
+        id=contador;
+        contador++;
     }
     
     public String Get_nombre(){
@@ -35,9 +38,28 @@ public class Libros {
     
     public void Set_nombre(String nombre){
         this.nombre=nombre;
+    }
+    public void Set_ejemplares(int ejemplares){
         this.ejemplares=ejemplares;
-        this.prestamos=prestamos;
+    }
+    public void Aumentar_prestamo(){
+        prestamos++;
+    }
+    public void Reducir_prestamo(){
+        prestamos--;
+    }
+    public void Añadir_usuario(int usuario){
+    usuariosprestados.add(usuario);
+    }
+    public void Borrar_usuario(int usuario){
+        usuariosprestados.remove(usuariosprestados.indexOf(usuario));
     }
     
-    
+    public void Mostrar_usuario(){
+        Iterator<Integer> Iterator=usuariosprestados.iterator();
+        while(Iterator.hasNext()){
+            int contenido=Iterator.next();
+            System.out.print(contenido+" ");
+        }
+    }
 }
