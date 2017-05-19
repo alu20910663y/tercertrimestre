@@ -3,7 +3,10 @@ package practica89;
 
 import java.util.Scanner;
 
-
+/**
+ * @version 1
+ * @author carlos
+ */
 public class Fecha {
    
     private int dia;
@@ -16,13 +19,21 @@ public class Fecha {
     
     Scanner S=new Scanner(System.in);
     
-    
+    /**
+     * Constructor con parametros
+     * @param dia
+     * @param mes
+     * @param año 
+     */
     public Fecha(int dia,int mes,int año){
         this.dia=dia;
         this.mes=mes;
         this.año=año;
     }
     
+    /**
+     * Mustra si la fecha es corecta y sino lo que esta incorrecto
+     */
     public void fecha_ok(){
         bisiesto();
         año();
@@ -44,7 +55,9 @@ public class Fecha {
         }
         
     }
-    
+    /**
+     * Calcula si el año es bisiesto
+     */
     private void bisiesto(){
         int cien,cuatrocientos,cuatro;
         cuatro=año%4;
@@ -57,19 +70,25 @@ public class Fecha {
             bisiesto=0;
         } 
     }
-    
+    /**
+     * Calcula si el año es correcto
+     */
     private void año(){
         if(año<0){
             año_ok=1;
         }   
     }
-    
+    /**
+     * Calcula si el mes es correcto
+     */
     private void mes(){
         if(mes<1||mes>12){
             mes_ok=1;
         }   
     }
-    
+    /**
+     * Calcula si el dia es correcto
+     */
     private void dia(){
         if(mes<1||mes>12||mes==1||mes==3||mes==5||mes==7||mes==8||mes==12){
             if(dia<1||dia>31) {
@@ -90,12 +109,24 @@ public class Fecha {
         }
     }
     
+    /**
+     * Obtiene el dia
+     * @return dia
+     */
     public int get_dia(){
         return dia;
     }
+    /**
+     * Obtiene el mes
+     * @return mes
+     */
     public int get_mes(){
         return mes;
     }
+    /**
+     * Obtiene el año
+     * @return año
+     */
     public int get_año(){
         return año;
     }
