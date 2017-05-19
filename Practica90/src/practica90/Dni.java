@@ -1,21 +1,33 @@
 
 package practica90;
-
+/**
+ * @version 1
+ * @author carlos
+ */
 
 public class Dni {
     
     private int numeros;
     private String letra;
-    
+    /**
+     * Constructor con parametros
+     * @param numeros
+     * @param letra 
+     */
     
     public Dni(int numeros,String letra){
         this.numeros=numeros;
         this.letra=letra;
     }
-    
+    /**
+     * Muestra el resultado
+     */
     public void letra_ok(){
         comprovar_letras();
     }
+    /**
+     * Calcula si la letra esta bien o no
+     */
     
     private void comprovar_letras(){
     int resto=numeros%23;
