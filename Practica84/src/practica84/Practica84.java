@@ -133,7 +133,7 @@ public class Practica84 {
                          case 2:
                             System.out.println("Introduce cantidad: ");
                             cantidad=S.nextDouble();
-                            arraycuenta[i].Reintegro(cantidad);
+                            arraycuenta[i].transferencia(cantidad);
                             System.out.println("Reintegro completado.");
                             break;
                          case 3:
