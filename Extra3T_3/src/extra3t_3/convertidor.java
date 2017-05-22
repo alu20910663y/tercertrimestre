@@ -22,7 +22,7 @@ public class convertidor {
     }
     
     /**
-     * Combierte a yardas
+     * Comvierte a yardas
      * @return yardas
      */
     public double Get_yardas(){
@@ -30,7 +30,7 @@ public class convertidor {
         return yardas;        
     }
     /**
-     * Combierte a pulgadas
+     * Comvierte a pulgadas
      * @return pulgadas
      */
     public double Get_pulgadas(){
@@ -38,7 +38,7 @@ public class convertidor {
         return pulgadas;
     }
     /**
-     * Combierte a centimetros
+     * Comvierte a centimetros
      * @return centimetros
      */
     public double Get_centimetros(){
@@ -46,7 +46,7 @@ public class convertidor {
         return centimetros;
     }
     /**
-     * Combierte a milimetros 
+     * Comvierte a milimetros 
      * @return milimetros
      */
     public double Get_milimetros(){
